@@ -11,7 +11,7 @@ import streamlit as st
 from google.oauth2 import service_account
 from gsheetsdb import connect
 
-from streamlit_gsheets import GSheetsConnection
+# from streamlit_gsheets import GSheetsConnection
 
 # st.set_page_config(initial_sidebar_state="collapsed")
 
@@ -32,21 +32,16 @@ st.title("Spa MD")
 
 st.header("My Progress")
 
+st.write(st.secrets)
+
 url = "https://docs.google.com/spreadsheets/d/1SvLHrTza5ubKZjnXulGEXi5lLwOdc1_d7-XCsjf0jIA/edit?usp=sharing"
 
-conn = st.experimental_connection("gsheets", type=GSheetsConnection)
-
-data = conn.read(spreadsheet=url, usecols=[0, 1])
-st.dataframe(data)
-
 # @st.cache_data(ttl=600)
-# def run_query(query):
-#     rows = conn.execute(query, headers=1)
-#     rows = rows.fetchall()
-#     return rows
+# def load_data(sheets_url):
+#     csv_url = sheets_url.replace("/edit#gid=", "/export?format=csv&gid=")
+#     return pd.read_csv(csv_url)
 
-# sheet_url = st.secrets["private_gsheets_url"]
-# rows = run_query(f'SELECT * FROM "{sheet_url}"')
+# df = load_data(st.secrets["public_gsheets_url"])
 
 # # Print results.
 # for row in rows:
