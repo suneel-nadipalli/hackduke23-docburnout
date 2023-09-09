@@ -7,12 +7,24 @@ import numpy as np
 import mpld3
 import streamlit.components.v1 as components
 
+import streamlit as st
+from google.oauth2 import service_account
+from gsheetsdb import connect
+
 # st.set_page_config(initial_sidebar_state="collapsed")
 
 st.set_page_config(
     page_title="Spa MD"
     # ,page_icon="CHECK"
     )
+
+credentials = service_account.Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"],
+    scopes=[
+        "https://www.googleapis.com/auth/spreadsheets",
+    ],
+)
+conn = connect(credentials=credentials)
 
 st.title("Spa MD")
 
