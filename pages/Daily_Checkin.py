@@ -8,17 +8,17 @@ col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
 with col1:
   form.write("Never")
 with col2:
-  form.write("Never")
+  form.write("A few times a year or less")
 with col3:
-  form.write("Never")
+  form.write("Once a month")
 with col4:
-  form.write("Never")
+  form.write("A few times a month or less")
 with col5:
-  form.write("Never")
+  form.write("Once a week")
 with col6:
-  form.write("Never")
+  form.write("A few times a week or less")
 with col7:
-  form.write("Never")
+  form.write("Every Day")
 
 question_01 = form.slider("I feel run down and drained of physical or emotional energy", 1, 7, 4)
 
