@@ -11,8 +11,6 @@ import streamlit as st
 from google.oauth2 import service_account
 from gsheetsdb import connect
 
-# from streamlit_gsheets import GSheetsConnection
-
 # st.set_page_config(initial_sidebar_state="collapsed")
 
 st.set_page_config(
@@ -20,21 +18,9 @@ st.set_page_config(
     # ,page_icon="CHECK"
     )
 
-# credentials = service_account.Credentials.from_service_account_info(
-#     st.secrets["gcp_service_account"],
-#     scopes=[
-#         "https://www.googleapis.com/auth/spreadsheets",
-#     ],
-# )
-# conn = connect(credentials=credentials)
-
 st.title("Spa MD")
 
 st.header("My Progress")
-
-st.write(st.secrets)
-
-url = "https://docs.google.com/spreadsheets/d/1SvLHrTza5ubKZjnXulGEXi5lLwOdc1_d7-XCsjf0jIA/edit?usp=sharing"
 
 @st.cache_data(ttl=600)
 def load_data(sheets_url):
@@ -43,11 +29,9 @@ def load_data(sheets_url):
 
 df = load_data(st.secrets["public_gsheets_url"])
 
-# # Print results.
-# for row in rows:
-#     st.write(f"Resp Rate: {row.resp_rate} | Body Temp: {row.body_temp} | Body Ox: {row.body_ox} | Heart Rate: {row.heart_rate}")
-# image_1 = Image.open('img/Graph.png')
-# st.image(image_1)
+for row in df.itertuples():
+    st.write(f"Resp Rate: {row.resp_rate} | Body Temp: {row.body_temp} | Body Ox: {row.body_ox} | Heart Rate: {row.heart_rate}")
+
 
 # Example time series data (timestamps and data points)
 timestamps = list(range(30))
