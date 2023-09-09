@@ -90,9 +90,9 @@ st.write("")
 
 col_01, col_02, col_03 = st.columns([2, 1, 2])
 with col_02:
-    daily_checking_button = st.button("Daily Checkin", type="primary")
+    daily_checking_button = st.button("\n        Daily Checkin        \n", type="primary")
     if daily_checking_button:
-        switch_page("\nDaily_Checkin\n")
+        switch_page("Daily_Checkin")
 
 
 
