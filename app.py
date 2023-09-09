@@ -88,7 +88,7 @@ st.write("")
 st.write("")
 st.write("")
 
-col_01, col_02, col_03 = st.columns([1, 1, 1])
+col_01, col_02, col_03 = st.columns([2, 1, 2])
 with col_02:
     daily_checking_button = st.button("Daily Checkin", type="primary")
     if daily_checking_button:
