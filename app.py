@@ -23,7 +23,7 @@ with col1:
 
    
 with col2:
-    image_3 = Image.open('img/Orange Circle.png')
+    image_3 = Image.open('img/Red Circle.png')
     # image_3 = Image.open('C:/Users/Jared Bailey/Desktop/Home/Hackathon/Hack for Good/2023/Red Circle.png')
     image_3 = image_3.resize(newsize)
     st.image(image_3)
