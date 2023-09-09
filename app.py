@@ -25,7 +25,7 @@ data_points = [3, 3, 1, 3, 0, 1, 0, 0, 0, 1, 2, 1, 0, 4, 3, 1, 1, 3, 3, 2, 2, 2,
 timestamps = pd.to_datetime(timestamps)
 
 # Create a time series plot
-# st.pyplot(plt.figure(figsize=(10, 6)))  # Adjust the figure size as needed
+st.pyplot(plt.figure(figsize=(10, 6)))  # Adjust the figure size as needed
 plt.plot(timestamps, data_points, marker='o', linestyle='-')
 
 # Add labels and title
