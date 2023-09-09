@@ -41,7 +41,7 @@ url = "https://docs.google.com/spreadsheets/d/1SvLHrTza5ubKZjnXulGEXi5lLwOdc1_d7
 #     csv_url = sheets_url.replace("/edit#gid=", "/export?format=csv&gid=")
 #     return pd.read_csv(csv_url)
 
-# df = load_data(st.secrets["public_gsheets_url"])
+df = load_data(st.secrets["public_gsheets_url"])
 
 # # Print results.
 # for row in rows:
