@@ -10,11 +10,11 @@ import streamlit.components.v1 as components
 
 
 st.set_page_config(
-    page_title="APP NAME HERE"
+    page_title="Spa MD"
     # ,page_icon="CHECK"
     )
 
-st.title("APP NAME HERE")
+st.title("Spa MD")
 
 st.header("My Progress")
 image_1 = Image.open('img/Graph.png')
@@ -48,7 +48,7 @@ plt.tight_layout()  # Adjust layout to prevent labels from getting cut off
 
 # fig_html = mpld3.fig_to_html(fig)
 # components.html(fig_html, height=600)
-st.pyplot(plt)
+st.pyplot(fig)
 
 st.write("")
 st.write("")
