@@ -6,8 +6,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import mpld3
 import streamlit.components.v1 as components
-
-import streamlit as st
 from google.oauth2 import service_account
 from gsheetsdb import connect
 
@@ -94,7 +92,7 @@ col_01, col_02, col_03 = st.columns([2, 1, 2])
 with col_02:
     daily_checking_button = st.button("Daily Checkin", type="primary")
     if daily_checking_button:
-        switch_page("Daily_Checkin")
+        switch_page("\nDaily_Checkin\n")
 
 
 
