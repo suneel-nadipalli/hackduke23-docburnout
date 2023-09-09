@@ -29,6 +29,19 @@ conn = connect(credentials=credentials)
 st.title("Spa MD")
 
 st.header("My Progress")
+
+@st.cache_data(ttl=600)
+def run_query(query):
+    rows = conn.execute(query, headers=1)
+    rows = rows.fetchall()
+    return rows
+
+sheet_url = st.secrets["private_gsheets_url"]
+rows = run_query(f'SELECT * FROM "{sheet_url}"')
+
+# Print results.
+for row in rows:
+    st.write(f"Resp Rate: {row.resp_rate} | Body Temp: {row.body_temp} | Body Ox: {row.body_ox} | Heart Rate: {row.heart_rate}")
 # image_1 = Image.open('img/Graph.png')
 # st.image(image_1)
 
