@@ -7,6 +7,7 @@ import numpy as np
 import mpld3
 import streamlit.components.v1 as components
 
+st.set_page_config(initial_sidebar_state="collapsed")
 
 st.set_page_config(
     page_title="Spa MD"
