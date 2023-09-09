@@ -12,6 +12,11 @@ st.header("My Progress")
 image_1 = Image.open('img/Graph.png')
 st.image(image_1)
 
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+
 col1, col2 = st.columns(2)
 newsize = (200, 200)
 
@@ -32,8 +37,7 @@ with col2:
 
 st.button("Daily Checkin")
 
-st.write("")
-st.write("")
+
 
 # footer = st.container()
 # with footer:
