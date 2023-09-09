@@ -34,12 +34,12 @@ st.button("Daily Checkin")
 st.write("")
 st.write("")
 
-footer = st.container()
-with footer:
-    col1, col2, col3= st.columns((2,1,1))
-    with col1:
-        st.write("Home")
-    with col2:
-        st.write("Actions")
-    with col3:
-        st.write("Daily Checkin")
+# footer = st.container()
+# with footer:
+#     col1, col2, col3= st.columns((2,1,1))
+#     with col1:
+#         st.write("Home")
+#     with col2:
+#         st.write("Actions")
+#     with col3:
+#         st.write("Daily Checkin")
