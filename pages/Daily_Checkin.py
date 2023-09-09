@@ -10,13 +10,13 @@ with col1:
 with col2:
   form.write("A few times a year or less")
 with col3:
-  form.write("Once a month")
+  form.write("Once a month or less")
 with col4:
-  form.write("A few times a month or less")
+  form.write("A few times a month")
 with col5:
   form.write("Once a week")
 with col6:
-  form.write("A few times a week or less")
+  form.write("A few times a week")
 with col7:
   form.write("Every Day")
 
