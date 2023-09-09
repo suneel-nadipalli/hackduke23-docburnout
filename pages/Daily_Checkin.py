@@ -16,7 +16,7 @@ with col5:
 with col6:
   st.write("A few times a week")
 with col7:
-  st.write("Every Day")
+  st.write("Every day")
 
 form = st.form(key='my_form')
 
