@@ -1,6 +1,4 @@
 import streamlit as st
-st.markdown(no_sidebar_style, unsafe_allow_html=True)
-st.set_page_config(initial_sidebar_state="collapsed")
 from streamlit_extras.switch_page_button import switch_page
 from PIL import Image
 import pandas as pd
@@ -8,6 +6,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import mpld3
 import streamlit.components.v1 as components
+
+# st.set_page_config(initial_sidebar_state="collapsed")
 
 st.set_page_config(
     page_title="Spa MD"
