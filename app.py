@@ -9,7 +9,8 @@ st.set_page_config(
 st.title("APP NAME HERE")
 
 st.header("My Progress")
-st.write("GRAPH HERE")
+image_1 = Image.open('img/Orange Circle.png')
+st.image(image_1)
 
 col1, col2 = st.columns(2)
 newsize = (200, 200)
