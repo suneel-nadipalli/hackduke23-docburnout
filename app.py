@@ -46,9 +46,9 @@ plt.xticks(rotation=45)
 plt.grid(True)  # Optionally add grid lines
 plt.tight_layout()  # Adjust layout to prevent labels from getting cut off
 
-fig_html = mpld3.fig_to_html(fig)
-components.html(fig_html, height=600)
-# st.pyplot(plt)
+# fig_html = mpld3.fig_to_html(fig)
+# components.html(fig_html, height=600)
+st.pyplot(plt)
 
 st.write("")
 st.write("")
