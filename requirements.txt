@@ -6,4 +6,4 @@ seaborn
 mpld3
 streamlit_extras
 gsheetsdb
-streamlit_gsheets
+git+https://github.com/streamlit/gsheets-connection
