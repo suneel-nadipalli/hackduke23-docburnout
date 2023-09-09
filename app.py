@@ -12,6 +12,37 @@ st.header("My Progress")
 image_1 = Image.open('img/Graph.png')
 st.image(image_1)
 
+# Example time series data (timestamps and data points)
+timestamps = list(range(30))
+data_points = [3, 3, 1, 3, 0, 1, 0, 0, 0, 1, 2, 1, 0, 4, 3, 1, 1, 3, 3, 2, 2, 2, 2, 3, 3, 1, 2, 1, 3, 2]
+
+# Convert timestamps to datetime objects (if they're not already)
+timestamps = pd.to_datetime(timestamps)
+
+# Create a time series plot
+st.pyplot(plt.figure(figsize=(10, 6)))  # Adjust the figure size as needed
+plt.plot(timestamps, data_points, marker='o', linestyle='-')
+
+# Add labels and title
+# plt.figure(figsize=(10, 6))  # Adjust the figure size as needed
+# plt.plot(timestamps, stress_data, marker='o', linestyle='-')
+
+# Add labels and title
+plt.xlabel('Time')
+plt.ylabel('Stress Level')
+plt.title('Stress Data Over 30 Seconds')
+
+# Rotate x-axis labels for better readability (optional)
+plt.xticks(rotation=45)
+
+# Adjust the x-axis limits to show 10 minutes of data
+# plt.xlim([1, 10])
+
+# Display the plot
+plt.grid(True)  # Optionally add grid lines
+plt.tight_layout()  # Adjust layout to prevent labels from getting cut off
+st.pyplot(plt)
+
 st.write("")
 st.write("")
 st.write("")
