@@ -1,4 +1,5 @@
 import streamlit as st
+st.markdown(no_sidebar_style, unsafe_allow_html=True)
 st.set_page_config(initial_sidebar_state="collapsed")
 from streamlit_extras.switch_page_button import switch_page
 from PIL import Image
