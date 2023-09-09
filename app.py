@@ -55,7 +55,7 @@ st.write("")
 st.write("")
 st.write("")
 
-col1, col2 = st.columns([3, 2])
+col1, col2 = st.columns([4, 2])
 newsize = (200, 200)
 
 with col1:
