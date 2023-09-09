@@ -1,10 +1,9 @@
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
 from PIL import Image
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-
 import mpld3
 import streamlit.components.v1 as components
 
@@ -73,7 +72,9 @@ with col2:
     st.image(image_3)
     st.header("Burnout Level")
 
-st.button("Daily Checkin")
+daily_checking_button = st.button("Daily Checkin")
+if daily_checking_button:
+    switch_page("Daily_Checkin")
 
 
 
