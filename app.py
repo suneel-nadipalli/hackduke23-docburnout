@@ -17,8 +17,8 @@ st.set_page_config(
 st.title("Spa MD")
 
 st.header("My Progress")
-image_1 = Image.open('img/Graph.png')
-st.image(image_1)
+# image_1 = Image.open('img/Graph.png')
+# st.image(image_1)
 
 # Example time series data (timestamps and data points)
 timestamps = list(range(30))
