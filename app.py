@@ -73,7 +73,7 @@ with col2:
     st.image(image_3)
     st.header("Burnout Level")
 
-col_01, col_02, col_03 = st.columns([3, 1, 3])
+col_01, col_02, col_03 = st.columns([2, 1, 2])
 with col_02:
     daily_checking_button = st.button("Daily Checkin", type="primary")
     if daily_checking_button:
