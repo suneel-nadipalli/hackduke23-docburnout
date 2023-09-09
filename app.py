@@ -32,7 +32,7 @@ st.title("Spa MD")
 
 st.header("My Progress")
 
-url = ""https://docs.google.com/spreadsheets/d/1SvLHrTza5ubKZjnXulGEXi5lLwOdc1_d7-XCsjf0jIA/edit?usp=sharing"
+url = "https://docs.google.com/spreadsheets/d/1SvLHrTza5ubKZjnXulGEXi5lLwOdc1_d7-XCsjf0jIA/edit?usp=sharing"
 
 conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 
