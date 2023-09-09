@@ -11,6 +11,8 @@ import streamlit as st
 from google.oauth2 import service_account
 from gsheetsdb import connect
 
+from streamlit_gsheets import GSheetsConnection
+
 # st.set_page_config(initial_sidebar_state="collapsed")
 
 st.set_page_config(
@@ -18,30 +20,37 @@ st.set_page_config(
     # ,page_icon="CHECK"
     )
 
-credentials = service_account.Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"],
-    scopes=[
-        "https://www.googleapis.com/auth/spreadsheets",
-    ],
-)
-conn = connect(credentials=credentials)
+# credentials = service_account.Credentials.from_service_account_info(
+#     st.secrets["gcp_service_account"],
+#     scopes=[
+#         "https://www.googleapis.com/auth/spreadsheets",
+#     ],
+# )
+# conn = connect(credentials=credentials)
 
 st.title("Spa MD")
 
 st.header("My Progress")
 
+url = ""https://docs.google.com/spreadsheets/d/1SvLHrTza5ubKZjnXulGEXi5lLwOdc1_d7-XCsjf0jIA/edit?usp=sharing"
+
+conn = st.experimental_connection("gsheets", type=GSheetsConnection)
+
+data = conn.read(spreadsheet=url, usecols=[0, 1])
+st.dataframe(data)
+
 # @st.cache_data(ttl=600)
-def run_query(query):
-    rows = conn.execute(query, headers=1)
-    rows = rows.fetchall()
-    return rows
+# def run_query(query):
+#     rows = conn.execute(query, headers=1)
+#     rows = rows.fetchall()
+#     return rows
 
-sheet_url = st.secrets["private_gsheets_url"]
-rows = run_query(f'SELECT * FROM "{sheet_url}"')
+# sheet_url = st.secrets["private_gsheets_url"]
+# rows = run_query(f'SELECT * FROM "{sheet_url}"')
 
-# Print results.
-for row in rows:
-    st.write(f"Resp Rate: {row.resp_rate} | Body Temp: {row.body_temp} | Body Ox: {row.body_ox} | Heart Rate: {row.heart_rate}")
+# # Print results.
+# for row in rows:
+#     st.write(f"Resp Rate: {row.resp_rate} | Body Temp: {row.body_temp} | Body Ox: {row.body_ox} | Heart Rate: {row.heart_rate}")
 # image_1 = Image.open('img/Graph.png')
 # st.image(image_1)
 
