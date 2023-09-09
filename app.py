@@ -73,7 +73,7 @@ with col2:
     st.image(image_3)
     st.header("Burnout Level")
 
-daily_checking_button = st.button("Daily Checkin")
+daily_checking_button = st.button("Daily Checkin", type="primary")
 if daily_checking_button:
     switch_page("Daily_Checkin")
 
