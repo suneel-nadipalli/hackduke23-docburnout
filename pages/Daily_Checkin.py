@@ -2,23 +2,23 @@ import streamlit as st
 
 st.title("Maslach Burnout Inventory Test")
 
-form = st.form(key='my_form')
-
 col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
 with col1:
-  form.write("Never")
+  st.write("Never")
 with col2:
-  form.write("A few times a year or less")
+  st.write("A few times a year or less")
 with col3:
-  form.write("Once a month or less")
+  st.write("Once a month or less")
 with col4:
-  form.write("A few times a month")
+  st.write("A few times a month")
 with col5:
-  form.write("Once a week")
+  st.write("Once a week")
 with col6:
-  form.write("A few times a week")
+  st.write("A few times a week")
 with col7:
-  form.write("Every Day")
+  st.write("Every Day")
+
+form = st.form(key='my_form')
 
 question_01 = form.slider("I feel run down and drained of physical or emotional energy", 1, 7, 4)
 
