@@ -4,6 +4,22 @@ st.title("Maslach Burnout Inventory Test")
 
 form = st.form(key='my_form')
 
+col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
+with col1:
+  form.write("Never")
+with col2:
+  form.write("Never")
+with col3:
+  form.write("Never")
+with col4:
+  form.write("Never")
+with col5:
+  form.write("Never")
+with col6:
+  form.write("Never")
+with col7:
+  form.write("Never")
+
 question_01 = form.slider("I feel run down and drained of physical or emotional energy", 1, 7, 4)
 
 form.write("")
