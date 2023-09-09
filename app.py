@@ -1,4 +1,10 @@
 import streamlit as st
+from PIL import Image
+
+st.set_page_config(
+    page_title="APP NAME HERE"
+    # ,page_icon="CHECK"
+    )
 
 st.title("APP NAME HERE")
 
@@ -6,14 +12,22 @@ st.header("My Progress")
 st.write("GRAPH HERE")
 
 col1, col2 = st.columns(2)
+newsize = (200, 200)
 
 with col1:
-   st.header("Stress Level")
-   st.write("MEDIUM STRESS CIRCLE CHART HERE")
+    image_2 = Image.open('img/Orange Circle.png')
+    # image_2 = Image.open('C:/Users/Jared Bailey/Desktop/Home/Hackathon/Hack for Good/2023/Orange Circle.png')
+    image_2 = image_2.resize(newsize)
+    st.image(image_2)
+    st.header("Stress Level")
 
+   
 with col2:
-   st.header("Burnout Level")
-   st.write("MEDIUM BURNOUT CIRCLE CHART HERE")
+    image_3 = Image.open('img/Orange Circle.png')
+    # image_3 = Image.open('C:/Users/Jared Bailey/Desktop/Home/Hackathon/Hack for Good/2023/Red Circle.png')
+    image_3 = image_3.resize(newsize)
+    st.image(image_3)
+    st.header("Burnout Level")
 
 st.button("Daily Checkin")
 
