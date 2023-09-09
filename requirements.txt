@@ -6,3 +6,4 @@ seaborn
 mpld3
 streamlit_extras
 gsheetsdb
+google.oauth2
