@@ -30,7 +30,7 @@ st.title("Spa MD")
 
 st.header("My Progress")
 
-@st.cache_data(ttl=600)
+# @st.cache_data(ttl=600)
 def run_query(query):
     rows = conn.execute(query, headers=1)
     rows = rows.fetchall()
