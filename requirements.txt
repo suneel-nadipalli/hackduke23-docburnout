@@ -4,3 +4,4 @@ numpy
 matplotlib
 seaborn
 mpld3
+streamlit_extras
