@@ -59,7 +59,7 @@ X = np.array(df)
 
 timestamps = len(df)
 
-data_points = svm_clf.predict(X)
+data_points = list(svm_clf.predict(X))
 
 # Convert timestamps to datetime objects (if they're not already)
 timestamps = pd.to_datetime(timestamps)
