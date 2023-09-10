@@ -82,7 +82,7 @@ with col1:
     key="circ_prog_bl")
 
     if 0 < circ_prog_bl <= 20:
-    circ_prog_sl.color('green')
+      circ_prog_sl.color('green')
     elif 20 < circ_prog_bl <= 40:
       circ_prog_sl.color('yellow')
     elif 40 < circ_prog_bl <= 60:
