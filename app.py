@@ -81,15 +81,15 @@ with col1:
     value=5,
     key="circ_prog_bl")
 
-    if 0 < circ_prog_bl <= 20:
+    if 0 < circ_prog_bl.value <= 20:
       circ_prog_sl.color('green')
-    elif 20 < circ_prog_bl <= 40:
+    elif 20 < circ_prog_bl.value <= 40:
       circ_prog_sl.color('yellow')
-    elif 40 < circ_prog_bl <= 60:
+    elif 40 < circ_prog_bl.value <= 60:
       circ_prog_sl.color('yellow')
-    elif 60 < circ_prog_bl <= 80:
+    elif 60 < circ_prog_bl.value <= 80:
       circ_prog_sl.color('yellow')
-    elif 80 < circ_prog_bl <= 100:
+    elif 80 < circ_prog_bl.value <= 100:
       circ_prog_sl.color('yellow')
 
     circ_prog_bl.st_circular_progress()
@@ -105,15 +105,15 @@ with col2:
     value=prog_level,
     key="circ_prog_sl")
 
-    if 0 < circ_prog_sl <= 20:
+    if 0 < circ_prog_sl.value <= 20:
       circ_prog_sl.color('green')
-    elif 20 < circ_prog_sl <= 40:
+    elif 20 < circ_prog_sl.value <= 40:
       circ_prog_sl.color('yellow')
-    elif 40 < circ_prog_sl <= 60:
+    elif 40 < circ_prog_sl.value <= 60:
       circ_prog_sl.color('yellow')
-    elif 60 < circ_prog_sl <= 80:
+    elif 60 < circ_prog_sl.value <= 80:
       circ_prog_sl.color('yellow')
-    elif 80 < circ_prog_sl <= 100:
+    elif 80 < circ_prog_sl.value <= 100:
       circ_prog_sl.color('yellow')
 
     circ_prog_sl.st_circular_progress()
