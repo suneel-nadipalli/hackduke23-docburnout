@@ -6,19 +6,19 @@ st.title("Maslach Burnout Inventory Test")
 
 col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
 with col1:
-  st.write("Never")
+  st.write("1) Never")
 with col2:
-  st.write("A few times a year or less")
+  st.write("2) A few times a year or less")
 with col3:
-  st.write("Once a month or less")
+  st.write("3) Once a month or less")
 with col4:
-  st.write("A few times a month")
+  st.write("4) A few times a month")
 with col5:
-  st.write("Once a week")
+  st.write("5) Once a week")
 with col6:
-  st.write("A few times a week")
+  st.write("6) A few times a week")
 with col7:
-  st.write("Every day")
+  st.write("7) Every day")
 
 form = st.form(key='my_form')
 
