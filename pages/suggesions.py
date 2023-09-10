@@ -1,6 +1,11 @@
 import streamlit as st
 
-st.set_page_config(initial_sidebar_state="collapsed", layout="centered")
+PAGE_CONFIG = {"page_title":"Suggestions", 
+               "page_icon":"💡", 
+               "layout":"centered", 
+               "initial_sidebar_state":"collapsed"}
+
+st.set_page_config(**PAGE_CONFIG)
 
 st.title("Suggestions")
 
