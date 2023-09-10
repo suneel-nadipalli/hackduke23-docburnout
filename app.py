@@ -14,6 +14,21 @@ import joblib
 
 from streamlit_extras.altex import line_chart, get_stocks_data
 
+from st_pages import Page, show_pages, add_page_title
+
+add_page_title()
+
+# Specify what pages should be shown in the sidebar, and what their titles 
+# and icons should be
+show_pages(
+    [
+        Page("app.py", "Home", "🏠"),
+        Page("pages/Daile_Checkin.py", "Daily CheckIn", "📝"),
+        Page("pages/Fatigue_Check.py", "Fatigue Chheck", "😴"),
+        Page ("pages/Suggestions.py", "Suggestions", "💡")
+    ]
+)
+
 def predict_sl(test_array, model):
     dataframe = pd.DataFrame([test_array], columns=['resp_rate', 'body_temp', 'body_ox', 'heart_rate'])
     pred_level = model.predict(dataframe)
