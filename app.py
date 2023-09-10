@@ -23,7 +23,7 @@ import os
 page_file = page_name_to_file[selected_page]
 
 # Use os.path.join to construct the file path
-page_path = os.path.join("pages", page_file)
+page_path = os.path.join(page_file)
 
 # Import and execute the selected page
 page_module = __import__(page_path[:-3])  # Remove ".py" extension
