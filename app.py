@@ -116,7 +116,7 @@ with col2:
   elif 80 < circ_prog_sl <= 100:
     circ_prog_sl.color('yellow')
 
-    circ_prog_sl.st_circular_progress()
+  circ_prog_sl.st_circular_progress()
 
 # footer = st.container()
 # with footer:
