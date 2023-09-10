@@ -7,42 +7,31 @@ PAGE_CONFIG = {"page_title":"patteRN Health",
 
 st.set_page_config(**PAGE_CONFIG)
 
-page_name_to_file = {
-    "Home": "app.py",
-    "Daily CheckIn": "pages/daily_checkin.py",
-    "Fatigue Check": "pages/fatigue_check.py",
-    "Suggestions": "pages/suggestions.py"
-}
+from st_pages import Page, show_pages, add_page_title
 
-# Create a sidebar selectbox for page selection
-selected_page = st.sidebar.selectbox("Select Page", list(page_name_to_file.keys()))
+show_pages(
+    [
+        Page("app.py", "Home"),
+        Page("pages/Daile_Checkin.py", "Daily CheckIn"),
+        Page("pages/Fatigue_Check.py", "Fatigue Chheck"),
+        Page ("pages/Suggestions.py", "Suggestions")
+    ]
+)
 
-import os
 
-# Import and run the selected page
-page_file = page_name_to_file[selected_page]
-
-# Use os.path.join to construct the file path
-page_path = os.path.join(page_file)
-
-# Import and execute the selected page
-page_module = __import__(page_path[:-3])  # Remove ".py" extension
-page_module.run()
-
-with st.sidebar:
-    st.title("Home 🏠")
+# with st.sidebar:
+#     st.title("Home 🏠")
   
-with st.sidebar:
-    st.title("Daily CheckIn 📝")
+# with st.sidebar:
+#     st.title("Daily CheckIn 📝")
 
-with st.sidebar:
-    st.title("Fatigue Check 😴")
+# with st.sidebar:
+#     st.title("Fatigue Check 😴")
   
-with st.sidebar:
-    st.title("Suggestions 💡")
+# with st.sidebar:
+#     st.title("Suggestions 💡")
 
 from streamlit_extras.switch_page_button import switch_page
-from PIL import Image
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -55,21 +44,6 @@ from st_circular_progress import CircularProgress
 import joblib
 
 from streamlit_extras.altex import line_chart, get_stocks_data
-
-from st_pages import Page, show_pages, add_page_title
-
-# add_page_title()
-
-# # Specify what pages should be shown in the sidebar, and what their titles 
-# # and icons should be
-# show_pages(
-#     [
-#         Page("app.py", "Home"),
-#         Page("pages/Daile_Checkin.py", "Daily CheckIn"),
-#         Page("pages/Fatigue_Check.py", "Fatigue Chheck"),
-#         Page ("pages/Suggestions.py", "Suggestions")
-#     ]
-# )
 
 def predict_sl(test_array, model):
     dataframe = pd.DataFrame([test_array], columns=['resp_rate', 'body_temp', 'body_ox', 'heart_rate'])
@@ -90,8 +64,6 @@ def predict_sl(test_array, model):
 
 svm_clf = joblib.load('burnout.pkl')
 
-# st.set_page_config(initial_sidebar_state="collapsed")
-
 st.header("My Progress")
 
 @st.cache_data(ttl=1)
@@ -100,7 +72,6 @@ def load_data(sheets_url):
     return pd.read_csv(csv_url)
 
 df = load_data(st.secrets["public_gsheets_url"])
-
 
 X = np.array(df)
 
