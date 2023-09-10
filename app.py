@@ -1,4 +1,18 @@
 import streamlit as st
+
+# st.set_page_config(
+#     page_title="PatteRN Health"
+#     ,page_icon="🏥"
+#     )
+
+PAGE_CONFIG = {"page_title":"patteRN Health", 
+               "page_icon":"🏥", 
+               "layout":"centered", 
+               "initial_sidebar_state":"collapsed"}
+
+st.set_page_config(**PAGE_CONFIG)
+
+
 from streamlit_extras.switch_page_button import switch_page
 from PIL import Image
 import pandas as pd
@@ -49,12 +63,6 @@ def predict_sl(test_array, model):
 svm_clf = joblib.load('burnout.pkl')
 
 # st.set_page_config(initial_sidebar_state="collapsed")
-
-st.set_page_config(
-    page_title="PatteRN Health"
-    # ,page_icon="CHECK"
-    )
-
 
 st.header("My Progress")
 
