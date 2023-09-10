@@ -11,7 +11,7 @@ from streamlit_autorefresh import st_autorefresh
 from st_circular_progress import CircularProgress
 import joblib
 
-# st.set_page_config(page_title = "Home")
+st.set_page_config(page_title="Home", page_icon=None, layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 # count = st_autorefresh(interval=10000, key="fizzbuzzcounter")
 
