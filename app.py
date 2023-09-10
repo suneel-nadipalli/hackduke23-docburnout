@@ -125,46 +125,40 @@ with col2:
 
     if 0 < prog_level <= 20:
           circ_prog_sl = CircularProgress(
-          label="Burnout",
+          label="Stress",
           value=prog_level,
           size="Large",
           key="circ_prog_sl",
           color='green')
     elif 20 < prog_level <= 40:
           circ_prog_sl = CircularProgress(
-          label="Burnout",
+          label="Stress",
           value=prog_level,
           size="Large",
           key="circ_prog_sl",
           color='yellow')
     elif 40 < prog_level <= 60:
           circ_prog_sl = CircularProgress(
-          label="Burnout",
+          label="Stress",
           value=5,
           size="Large",
           key="circ_prog_sl",
           color='orange')
     elif 60 < prog_level <= 80:
           circ_prog_sl = CircularProgress(
-          label="Burnout",
+          label="Stress",
           value=5,
           size="Large",
           key="circ_prog_sl",
           color='red')
     elif 80 < prog_level <= 100:
           circ_prog_sl = CircularProgress(
-          label="Burnout",
+          label="Stress",
           value=5,
           size="Large",
           key="circ_prog_sl",
           color='red')
     
-    # circ_prog_sl = CircularProgress(
-    # label="Stress",
-    # value=prog_level,
-    # size="Large",
-    # key="circ_prog_sl")
-
     circ_prog_sl.st_circular_progress()
 
 # footer = st.container()
