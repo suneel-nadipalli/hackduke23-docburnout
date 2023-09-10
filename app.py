@@ -97,8 +97,8 @@ st.write(new_df)
 stocks = get_stocks_data()
 line_chart(
     data=new_df,
-    x="seconds",
-    y="stress",
+    x="Timestamps",
+    y="Stress Level",
     title="A beautiful simple line chart",
 )
 
