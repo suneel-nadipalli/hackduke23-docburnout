@@ -7,8 +7,10 @@ import numpy as np
 import streamlit.components.v1 as components
 from google.oauth2 import service_account
 from gsheetsdb import connect
-
+from streamlit_autorefresh import st_autorefresh
 import joblib
+
+count = st_autorefresh(interval=2000, key="fizzbuzzcounter")
 
 def predict_sl(test_array, model):
     dataframe = pd.DataFrame([test_array], columns=['resp_rate', 'body_temp', 'body_ox', 'heart_rate'])
