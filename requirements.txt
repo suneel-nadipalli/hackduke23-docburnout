@@ -13,3 +13,4 @@ scikit-learn
 st-circular-progress
 entrypoints
 altair==4.0.0
+st-pages
