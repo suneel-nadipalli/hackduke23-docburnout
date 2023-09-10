@@ -12,6 +12,18 @@ PAGE_CONFIG = {"page_title":"patteRN Health",
 
 st.set_page_config(**PAGE_CONFIG)
 
+with st.sidebar:
+    st.title("Home 🏠")
+  
+with st.sidebar:
+    st.title("Daily CheckIn 📝")
+
+with st.sidebar:
+    st.title("Fatigue Check 😴")
+  
+with st.sidebar:
+    st.title("Suggestions 💡")
+
 from streamlit_extras.switch_page_button import switch_page
 from PIL import Image
 import pandas as pd
