@@ -2,6 +2,7 @@ import streamlit as st
 
 st.title("Suggestions")
 
+st.divider()
 col_0_1, col_0_2 = st.columns(2)
 
 with col_0_1:
@@ -10,3 +11,4 @@ with col_0_1:
 with col_0_2:
     st.write("")
     Complete1 = st.button('Complete')
+st.divider()
