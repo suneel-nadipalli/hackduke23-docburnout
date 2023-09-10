@@ -131,9 +131,9 @@ with col2:
     # st.image(image_3)
     # st.header("Burnout Level")
 
-st.write("")
-st.write("")
-st.write("")
+# st.write("")
+# st.write("")
+# st.write("")
 
 # col_01, col_02, col_03 = st.columns([2.2, 2, 2])
 # with col_02:
