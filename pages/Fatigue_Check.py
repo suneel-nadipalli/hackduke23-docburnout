@@ -6,9 +6,9 @@ st.set_page_config(initial_sidebar_state="collapsed", layout="centered")
 
 img_file_buffer = st.camera_input("")
 
-if img_file_buffer is not None:
+# if img_file_buffer is not None:
    # To read image file buffer as a PIL Image:
-    img = Image.open(img_file_buffer)
+    # img = Image.open(img_file_buffer)
 
     # To convert PIL Image to numpy array:
     # img_array = np.array(img)
