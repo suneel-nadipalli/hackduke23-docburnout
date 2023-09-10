@@ -88,13 +88,13 @@ if submit_button:
             question_11 + question_12 + question_13 + question_14 + question_15)
     st.header(f"Your Score: {score}")
     if score < 25:
-        st.write("Scores of 0-24 indicated low burnout.")
+        st.write("Scores of 0-24 indicate low burnout.")
         st.write("A very low MBI burnout measurement indicates that an individual is experiencing a relatively low level of burnout, suggesting that they are likely coping well with their work-related stressors and maintaining a healthy work-life balance.")
     elif score < 50:
-        st.write("Scores of 25-49 indicated moderate burnout.")
+        st.write("Scores of 25-49 indicate moderate burnout.")
         st.write("A moderate MBI (Maslach Burnout Inventory) burnout measurement suggests that an individual is experiencing an intermediate level of burnout. They may be experiencing some signs of emotional exhaustion and depersonalization in their work, which can impact their overall well-being and job satisfaction.")
     elif score < 75:
-        st.write("Scores of 50-74 indicated high burnout.")
+        st.write("Scores of 50-74 indicate high burnout.")
         st.write("This typically involves intense feelings of emotional exhaustion, a strong sense of depersonalization or cynicism towards work or colleagues, and a diminished sense of personal accomplishment. A high MBI burnout measurement signals a critical need for immediate attention and intervention to prevent further deterioration of mental and emotional well-being.")
     else:
         st.write("Scores of 75 and above indicate extreme burnout.")
