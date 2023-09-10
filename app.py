@@ -17,6 +17,8 @@ page_name_to_file = {
 # Create a sidebar selectbox for page selection
 selected_page = st.sidebar.selectbox("Select Page", list(page_name_to_file.keys()))
 
+import os
+
 # Import and run the selected page
 page_file = page_name_to_file[selected_page]
 
