@@ -1,9 +1,14 @@
 import streamlit as st
 import random
 
-st.set_page_config(initial_sidebar_state="collapsed", layout="centered")
+PAGE_CONFIG = {"page_title":"Fatigue Check", 
+               "page_icon":"😴", 
+               "layout":"centered", 
+               "initial_sidebar_state":"collapsed"}
 
-# st.title("Fatigue Check")
+st.set_page_config(**PAGE_CONFIG)
+
+st.title("Fatigue Check")
 
 img_file_buffer = st.camera_input("")
 
