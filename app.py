@@ -92,6 +92,7 @@ new_df = pd.DataFrame({'Timestamps': timestamps, 'Stress Level': data_points})
 #     title="A beautiful simple line chart",
 # )
 
+st.write(new_df)
 
 stocks = get_stocks_data()
 line_chart(
