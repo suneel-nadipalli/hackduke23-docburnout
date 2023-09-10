@@ -82,6 +82,9 @@ sns.set_style("whitegrid")
 plt.figure(figsize=(10, 6))
 sns.lineplot(data=new_df, x='Timestamps', y='Stress Level', marker='o', linestyle='-')
 
+# Remove horizontal grid lines
+sns.despine(left=True, bottom=True)
+
 # Add labels and title
 plt.xlabel('Time')
 plt.ylabel('Stress Level')
