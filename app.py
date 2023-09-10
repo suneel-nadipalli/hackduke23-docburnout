@@ -66,7 +66,7 @@ st.write("")
 st.write("")
 st.write("")
 
-col1, col2 = st.columns([4, 2])
+dummy1, col1, col2, dummy2 = st.columns([1, 3, 1, 1])
 newsize = (100, 100)
 
 with col1:
