@@ -33,6 +33,9 @@ with col_2_2:
     Complete2 = st.button('Complete  ')
 st.divider()
 
+
+st.write("")
+st.write("")
 st.title("Other Options")
 
 st.divider()
