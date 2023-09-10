@@ -76,22 +76,44 @@ dummy1, col1, col2, dummy2 = st.columns([1, 3, 3, 1])
 newsize = (150, 150)
 
 with col1:
-    circ_prog_bl = CircularProgress(
-    label="Burnout",
-    value=5,
-    size="Large",
-    key="circ_prog_bl")
 
-    if 0 < circ_prog_bl.value <= 20:
-      circ_prog_bl.update_value(color='green')
-    elif 20 < circ_prog_bl.value <= 40:
-      circ_prog_bl.update_value(color='green')
-    elif 40 < circ_prog_bl.value <= 60:
-      circ_prog_bl.update_value(color='yellow')
-    elif 60 < circ_prog_bl.value <= 80:
-      circ_prog_bl.update_value(color='red')
-    elif 80 < circ_prog_bl.value <= 100:
-      circ_prog_bl.update_value(color='red')
+    prog_level = 5
+
+    if 0 < prog_level <= 20:
+          circ_prog_bl = CircularProgress(
+          label="Burnout",
+          value=5,
+          size="Large",
+          key="circ_prog_bl",
+          color='green')
+    elif 20 < prog_level <= 40:
+          circ_prog_bl = CircularProgress(
+          label="Burnout",
+          value=5,
+          size="Large",
+          key="circ_prog_bl",
+          color='yellow')
+    elif 40 < prog_level <= 60:
+          circ_prog_bl = CircularProgress(
+          label="Burnout",
+          value=5,
+          size="Large",
+          key="circ_prog_bl",
+          color='orange')
+    elif 60 < prog_level <= 80:
+          circ_prog_bl = CircularProgress(
+          label="Burnout",
+          value=5,
+          size="Large",
+          key="circ_prog_bl",
+          color='red')
+    elif 80 < prog_level <= 100:
+          circ_prog_bl = CircularProgress(
+          label="Burnout",
+          value=5,
+          size="Large",
+          key="circ_prog_bl",
+          color='red')
 
     circ_prog_bl.st_circular_progress()
 
@@ -100,23 +122,48 @@ with col2:
     pred_level = svm_clf.predict(np.array(df.tail(1)))[0]
 
     prog_level = int((pred_level/5)*100)
-    
-    circ_prog_sl = CircularProgress(
-    label="Stress",
-    value=prog_level,
-    size="Large",
-    key="circ_prog_sl")
 
-    if 0 < circ_prog_sl.value <= 20:
-      circ_prog_sl.update_value(color='green')
-    elif 20 < circ_prog_sl.value <= 40:
-      circ_prog_sl.update_value(color='green')
-    elif 40 < circ_prog_sl.value <= 60:
-      circ_prog_sl.update_value(color='yellow')
-    elif 60 < circ_prog_sl.value <= 80:
-      circ_prog_sl.update_value(color='red')
-    elif 80 < circ_prog_sl.value <= 100:
-      circ_prog_sl.update_value(color='red')
+    if 0 < prog_level <= 20:
+          circ_prog_sl = CircularProgress(
+          label="Burnout",
+          value=prog_level,
+          size="Large",
+          key="circ_prog_sl",
+          color='green')
+    elif 20 < prog_level <= 40:
+          circ_prog_sl = CircularProgress(
+          label="Burnout",
+          value=prog_level,
+          size="Large",
+          key="circ_prog_sl",
+          color='yellow')
+    elif 40 < prog_level <= 60:
+          circ_prog_sl = CircularProgress(
+          label="Burnout",
+          value=5,
+          size="Large",
+          key="circ_prog_sl",
+          color='orange')
+    elif 60 < prog_level <= 80:
+          circ_prog_sl = CircularProgress(
+          label="Burnout",
+          value=5,
+          size="Large",
+          key="circ_prog_sl",
+          color='red')
+    elif 80 < prog_level <= 100:
+          circ_prog_sl = CircularProgress(
+          label="Burnout",
+          value=5,
+          size="Large",
+          key="circ_prog_sl",
+          color='red')
+    
+    # circ_prog_sl = CircularProgress(
+    # label="Stress",
+    # value=prog_level,
+    # size="Large",
+    # key="circ_prog_sl")
 
     circ_prog_sl.st_circular_progress()
 
