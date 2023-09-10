@@ -37,11 +37,11 @@ svm_clf = joblib.load('burnout.pkl')
 # st.set_page_config(initial_sidebar_state="collapsed")
 
 st.set_page_config(
-    page_title="Spa MD"
+    page_title="Stress Tracker MD"
     # ,page_icon="CHECK"
     )
 
-st.title("Spa MD")
+st.title("Stress Tracker MD")
 
 st.header("My Progress")
 
