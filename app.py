@@ -12,6 +12,10 @@ from streamlit_autorefresh import st_autorefresh
 from st_circular_progress import CircularProgress
 import joblib
 
+from streamlit_extras.altex import line_chart, get_stocks_data
+
+
+
 # st.set_page_config(page_title="Home", page_icon=None, layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 # count = st_autorefresh(interval=10000, key="fizzbuzzcounter")
@@ -45,6 +49,14 @@ st.set_page_config(
 # st.title("Health Tracker MD")
 
 st.header("My Progress")
+
+stocks = get_stocks_data()
+line_chart(
+    data=stocks.query("symbol == 'GOOG'"),
+    x="date",
+    y="price",
+    title="A beautiful simple line chart",
+)
 
 @st.cache_data(ttl=1)
 def load_data(sheets_url):
