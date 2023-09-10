@@ -82,8 +82,11 @@ question_15 = form.slider("15) I find that I do not have time to plan as much as
 
 submit = form.form_submit_button('Submit')
 
-# question_1+question_2+question_3+question_4+question_5+question_6+question_7+question_8+question_9+question_10+question_11+question_12+question_13+question_14+question_15)
-st.write("You selected:", question_01)
+if submit_button:
+    score = (question_01 + question_02 + question_03 + question_04 + question_05 + 
+            question_06 + question_07 + question_08 + question_09 + question_10 + 
+            question_11 + question_12 + question_13 + question_14 + question_15)
+    st.write("You selected:", score)
 
 
 
