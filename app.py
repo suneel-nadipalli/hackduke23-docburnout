@@ -118,7 +118,7 @@ with col2:
     
     circ_prog_bl = CircularProgress(
     label="Current Burnout Level",
-    value=(pred_level/5)*100,
+    value=60,
     key="circ_prog_bl")
 
     circ_prog_bl.st_circular_progress()
