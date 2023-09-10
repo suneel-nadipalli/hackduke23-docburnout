@@ -3,6 +3,7 @@ from streamlit_extras.switch_page_button import switch_page
 from PIL import Image
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 import numpy as np
 import streamlit.components.v1 as components
 from google.oauth2 import service_account
@@ -69,28 +70,52 @@ data_points = list(svm_clf.predict(X))
 # Convert timestamps to datetime objects (if they're not already)
 timestamps = pd.to_datetime(timestamps)
 
+# ========== CREATE PLOT ==========
+
+# Create a DataFrame
+df = pd.DataFrame({'Timestamps': timestamps, 'Stress Level': data_points})
+
+# Set a seaborn style (optional)
+sns.set_style("whitegrid")
+
 # Create a time series plot
-fig = (plt.figure(figsize=(10, 6)))  # Adjust the figure size as needed
-plt.plot(timestamps, data_points, marker='o', linestyle='-')
+plt.figure(figsize=(10, 6))
+sns.lineplot(data=df, x='Timestamps', y='Stress Level', marker='o', linestyle='-')
 
 # Add labels and title
 plt.xlabel('Time')
 plt.ylabel('Stress Level')
-plt.title(f'Stress Data Over {len(df )} Seconds')
+plt.title(f'Stress Data Over {len(df)} Hours')
 
 # Rotate x-axis labels for better readability (optional)
 plt.xticks(rotation=45)
 
-# Adjust the x-axis limits to show 10 minutes of data
-# plt.xlim([1, 10])
-
-# Display the plot
-plt.grid(True)  # Optionally add grid lines
-plt.tight_layout()  # Adjust layout to prevent labels from getting cut off
-
-# fig_html = mpld3.fig_to_html(fig)
-# components.html(fig_html, height=600)
+# Display the plot using Streamlit
 st.pyplot(plt)
+
+
+# # Create a time series plot
+# fig = (plt.figure(figsize=(10, 6)))  # Adjust the figure size as needed
+# plt.plot(timestamps, data_points, marker='o', linestyle='-')
+
+# # Add labels and title
+# plt.xlabel('Time')
+# plt.ylabel('Stress Level')
+# plt.title(f'Stress Data Over {len(df )} Seconds')
+
+# # Rotate x-axis labels for better readability (optional)
+# plt.xticks(rotation=45)
+
+# # Adjust the x-axis limits to show 10 minutes of data
+# # plt.xlim([1, 10])
+
+# # Display the plot
+# plt.grid(True)  # Optionally add grid lines
+# plt.tight_layout()  # Adjust layout to prevent labels from getting cut off
+
+# # fig_html = mpld3.fig_to_html(fig)
+# # components.html(fig_html, height=600)
+# st.pyplot(plt)
 
 st.write("")
 st.write("")
