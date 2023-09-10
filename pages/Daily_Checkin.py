@@ -22,7 +22,7 @@ with col7:
 
 form = st.form(key='my_form')
 
-question_01 = form.slider("1, I feel run down and drained of physical or emotional energy", 1, 7, 4)
+question_01 = form.slider("1) I feel run down and drained of physical or emotional energy", 1, 7, 4)
 
 form.write("")
 form.write("")
