@@ -112,6 +112,8 @@ with col2:
 
     pred_level = svm_clf.predict(np.array(df.tail(1)))[0]
 
+    st.write(pred_level)
+
     # st.write(svm_clf.predict(np.array(df.tail(1))))
     
     circ_prog_bl = CircularProgress(
