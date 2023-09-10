@@ -32,3 +32,26 @@ with col_2_2:
     st.write("")
     Complete2 = st.button('Complete  ')
 st.divider()
+
+st.title("Other Options")
+
+st.divider()
+col_3_1, col_3_2 = st.columns([4,1])
+
+with col_3_1:
+    st.header("Exercise")
+    st.write("Promote blood circulations")
+with col_3_2:
+    st.write("")
+    Complete3 = st.button('Complete   ')
+st.divider()
+
+col_4_1, col_4_2 = st.columns([4,1])
+
+with col_4_1:
+    st.header("Affirmations")
+    st.write("Restore your confidence")
+with col_4_2:
+    st.write("")
+    Complete1 = st.button('Complete    ')
+st.divider()
