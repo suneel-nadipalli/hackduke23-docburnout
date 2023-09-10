@@ -11,6 +11,8 @@ from streamlit_autorefresh import st_autorefresh
 from st_circular_progress import CircularProgress
 import joblib
 
+st.set_page_config(page_title = "New Name")
+
 # count = st_autorefresh(interval=10000, key="fizzbuzzcounter")
 
 def predict_sl(test_array, model):
