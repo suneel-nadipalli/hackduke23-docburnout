@@ -145,7 +145,7 @@ with col2:
     
     circ_prog_sl = CircularProgress(
     label="Stress",
-    value=prog_level,
+    value=60,
     key="circ_prog_sl")
 
     circ_prog_sl.st_circular_progress()
