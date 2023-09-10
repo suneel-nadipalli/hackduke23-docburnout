@@ -11,19 +11,6 @@ from gsheetsdb import connect
 
 # st.set_page_config(initial_sidebar_state="collapsed")
 
-st.markdown(
-    """
-<style>
-button {
-    height: auto;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-</style>
-""",
-    unsafe_allow_html=True,
-)
-
 st.set_page_config(
     page_title="Spa MD"
     # ,page_icon="CHECK"
