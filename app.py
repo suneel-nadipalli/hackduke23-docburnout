@@ -81,6 +81,17 @@ with col1:
     value=5,
     key="circ_prog_bl")
 
+    if 0 < circ_prog_bl <= 20:
+    circ_prog_sl.color('green')
+    elif 20 < circ_prog_bl <= 40:
+      circ_prog_sl.color('yellow')
+    elif 40 < circ_prog_bl <= 60:
+      circ_prog_sl.color('yellow')
+    elif 60 < circ_prog_bl <= 80:
+      circ_prog_sl.color('yellow')
+    elif 80 < circ_prog_bl <= 100:
+      circ_prog_sl.color('yellow')
+
     circ_prog_bl.st_circular_progress()
 
 with col2:
@@ -93,6 +104,17 @@ with col2:
     label="Stress",
     value=prog_level,
     key="circ_prog_sl")
+
+  if 0 < circ_prog_sl <= 20:
+    circ_prog_sl.color('green')
+  elif 20 < circ_prog_sl <= 40:
+    circ_prog_sl.color('yellow')
+  elif 40 < circ_prog_sl <= 60:
+    circ_prog_sl.color('yellow')
+  elif 60 < circ_prog_sl <= 80:
+    circ_prog_sl.color('yellow')
+  elif 80 < circ_prog_sl <= 100:
+    circ_prog_sl.color('yellow')
 
     circ_prog_sl.st_circular_progress()
 
