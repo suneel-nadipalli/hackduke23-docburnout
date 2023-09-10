@@ -105,16 +105,16 @@ with col2:
     value=prog_level,
     key="circ_prog_sl")
 
-  if 0 < circ_prog_sl <= 20:
-    circ_prog_sl.color('green')
-  elif 20 < circ_prog_sl <= 40:
-    circ_prog_sl.color('yellow')
-  elif 40 < circ_prog_sl <= 60:
-    circ_prog_sl.color('yellow')
-  elif 60 < circ_prog_sl <= 80:
-    circ_prog_sl.color('yellow')
-  elif 80 < circ_prog_sl <= 100:
-    circ_prog_sl.color('yellow')
+    if 0 < circ_prog_sl <= 20:
+      circ_prog_sl.color('green')
+    elif 20 < circ_prog_sl <= 40:
+      circ_prog_sl.color('yellow')
+    elif 40 < circ_prog_sl <= 60:
+      circ_prog_sl.color('yellow')
+    elif 60 < circ_prog_sl <= 80:
+      circ_prog_sl.color('yellow')
+    elif 80 < circ_prog_sl <= 100:
+      circ_prog_sl.color('yellow')
 
   circ_prog_sl.st_circular_progress()
 
