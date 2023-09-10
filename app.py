@@ -50,17 +50,9 @@ st.set_page_config(
 
 st.header("My Progress")
 
-stocks = get_stocks_data()
-line_chart(
-    data=stocks.query("symbol == 'GOOG'"),
-    x="date",
-    y="price",
-    title="A beautiful simple line chart",
-)
+# st.write(stocks.query("symbol == 'GOOG'"))
 
-st.write(stocks.query("symbol == 'GOOG'"))
-
-st.write(type(stocks.query("symbol == 'GOOG'")))
+# st.write(type(stocks.query("symbol == 'GOOG'")))
 
 @st.cache_data(ttl=1)
 def load_data(sheets_url):
@@ -91,26 +83,46 @@ timestamps = pd.to_datetime(timestamps)
 # Create a DataFrame
 new_df = pd.DataFrame({'Timestamps': timestamps, 'Stress Level': data_points})
 
-# Set a seaborn style (optional)
-sns.set_style("whitegrid")
 
-# Create a time series plot
-plt.figure(figsize=(10, 6))
-sns.lineplot(data=new_df, x='Timestamps', y='Stress Level', marker='o', linestyle='-')
+# stocks = get_stocks_data()
+# line_chart(
+#     data=stocks.query("symbol == 'GOOG'"),
+#     x="date",
+#     y="price",
+#     title="A beautiful simple line chart",
+# )
 
-# Remove horizontal grid lines
-sns.despine(left=True, bottom=True)
 
-# Add labels and title
-plt.xlabel('Time')
-plt.ylabel('Stress Level')
-plt.title(f'Stress Data Over {len(new_df)} Hours')
+stocks = get_stocks_data()
+line_chart(
+    data=new_df,
+    x="seconds",
+    y="stress",
+    title="A beautiful simple line chart",
+)
 
-# Rotate x-axis labels for better readability (optional)
-plt.xticks(rotation=45)
 
-# Display the plot using Streamlit
-st.pyplot(plt)
+
+# # Set a seaborn style (optional)
+# sns.set_style("whitegrid")
+
+# # Create a time series plot
+# plt.figure(figsize=(10, 6))
+# sns.lineplot(data=new_df, x='Timestamps', y='Stress Level', marker='o', linestyle='-')
+
+# # Remove horizontal grid lines
+# sns.despine(left=True, bottom=True)
+
+# # Add labels and title
+# plt.xlabel('Time')
+# plt.ylabel('Stress Level')
+# plt.title(f'Stress Data Over {len(new_df)} Hours')
+
+# # Rotate x-axis labels for better readability (optional)
+# plt.xticks(rotation=45)
+
+# # Display the plot using Streamlit
+# st.pyplot(plt)
 
 
 # Create a time series plot
