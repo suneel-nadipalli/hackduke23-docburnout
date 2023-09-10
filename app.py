@@ -111,6 +111,8 @@ with col1:
 with col2:
 
     pred_level = svm_clf.predict(np.array(df.tail(1)))
+
+    st.write(df.tail(1))
     
     circ_prog_bl = CircularProgress(
     label="Current Burnout Level",
