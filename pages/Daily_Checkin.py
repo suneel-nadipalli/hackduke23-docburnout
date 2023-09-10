@@ -89,9 +89,9 @@ if submit_button:
     st.header("Your Score: ", score)
     if score < 25:
         st.write("Scores of 0-24 indicated very low burnout.")
-    else if score < 50:
+    elif score < 50:
         st.write("Scores of 25-49 indicated low burnout.")
-    else if score < 75:
+    elif score < 75:
         st.write("Scores of 50-74 indicated moderate burnout.")
     else:
         st.write("Scores of 75 and above indicate high burnout.")
