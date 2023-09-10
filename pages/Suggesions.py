@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("Suggestions")
 
-col_0_1, col_0_2 = st.coluns(2)
+col_0_1, col_0_2 = st.columns(2)
 
 form1 = st.form(key='my_form')
 with col_0_1:
