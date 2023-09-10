@@ -80,7 +80,7 @@ form.write("")
 form.write("")
 question_15 = form.slider("15) I find that I do not have time to plan as much as I would like to", 1, 7, 4)
 
-submit = form.form_submit_button('Submit')
+submit_button = form.form_submit_button('Submit')
 
 if submit_button:
     score = (question_01 + question_02 + question_03 + question_04 + question_05 + 
