@@ -1,5 +1,7 @@
 import streamlit as st
 
+st.set_page_config(initial_sidebar_state="collapsed")
+
 st.title("Fatigue Check")
 
 img_file_buffer = st.camera_input("")
