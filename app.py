@@ -42,6 +42,9 @@ svm_clf = joblib.load('burnout.pkl')
 
 st.header("My Progress")
 
+st.write("")
+st.write("")
+
 @st.cache_data(ttl=1)
 def load_data(sheets_url):
     csv_url = sheets_url.replace("/edit#gid=", "/export?format=csv&gid=")
@@ -66,8 +69,6 @@ line_chart(
     y="Stress Level"
 )
 
-st.write("")
-st.write("")
 st.write("")
 st.write("")
 
