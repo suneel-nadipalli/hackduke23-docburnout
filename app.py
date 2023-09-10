@@ -67,7 +67,7 @@ st.write("")
 st.write("")
 
 col1, col2 = st.columns([4, 2])
-newsize = (200, 200)
+newsize = (100, 100)
 
 with col1:
     image_2 = Image.open('img/Orange Circle.png')
