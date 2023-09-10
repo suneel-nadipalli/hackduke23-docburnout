@@ -8,6 +8,7 @@ import streamlit.components.v1 as components
 from google.oauth2 import service_account
 from gsheetsdb import connect
 from streamlit_autorefresh import st_autorefresh
+from st_circular_progress import CircularProgress
 import joblib
 
 # count = st_autorefresh(interval=10000, key="fizzbuzzcounter")
@@ -94,16 +95,20 @@ st.write("")
 st.write("")
 st.write("")
 
+my_circular_progress = CircularProgress(
+    label="Current Stress Level",
+    value=5,
+    key="my_circular_progress")
+
+my_circular_progress.st_circular_progress()
+
+
+
 dummy1, col1, col2, dummy2 = st.columns([1, 3, 3, 1])
 newsize = (150, 150)
 
 with col1:
-    image_2 = Image.open('img/Orange Circle.png')
-    # image_2 = Image.open('C:/Users/Jared Bailey/Desktop/Home/Hackathon/Hack for Good/2023/Orange Circle.png')
-    image_2 = image_2.resize(newsize)
-    st.image(image_2)
-    st.header("Stress Level")
-
+    my_circular_progress.update_values(progress=3)
    
 with col2:
     image_3 = Image.open('img/Red Circle.png')
