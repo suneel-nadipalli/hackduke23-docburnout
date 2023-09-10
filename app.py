@@ -79,6 +79,7 @@ with col1:
     circ_prog_bl = CircularProgress(
     label="Burnout",
     value=5,
+    size="Large",
     key="circ_prog_bl")
 
     if 0 < circ_prog_bl.value <= 20:
@@ -103,6 +104,7 @@ with col2:
     circ_prog_sl = CircularProgress(
     label="Stress",
     value=prog_level,
+    size="Large"
     key="circ_prog_sl")
 
     if 0 < circ_prog_sl.value <= 20:
