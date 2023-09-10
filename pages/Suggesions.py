@@ -3,7 +3,7 @@ import streamlit as st
 st.title("Suggestions")
 
 st.divider()
-col_0_1, col_0_2 = st.columns(2)
+col_0_1, col_0_2 = st.columns([4,1])
 
 with col_0_1:
     st.header("Sleep")
