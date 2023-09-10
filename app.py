@@ -58,9 +58,9 @@ line_chart(
     title="A beautiful simple line chart",
 )
 
-st.write(data)
+st.write(stocks.query("symbol == 'GOOG'"))
 
-st.write(type(data))
+st.write(type(stocks.query("symbol == 'GOOG'")))
 
 @st.cache_data(ttl=1)
 def load_data(sheets_url):
