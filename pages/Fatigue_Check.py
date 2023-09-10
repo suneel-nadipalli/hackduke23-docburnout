@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(initial_sidebar_state="collapsed", layout="centered")
 
-st.title("Fatigue Check")
+# st.title("Fatigue Check")
 
 img_file_buffer = st.camera_input("")
 
