@@ -73,49 +73,49 @@ timestamps = pd.to_datetime(timestamps)
 # ========== CREATE PLOT ==========
 
 # Create a DataFrame
-# df = pd.DataFrame({'Timestamps': timestamps, 'Stress Level': data_points})
+new_df = pd.DataFrame({'Timestamps': timestamps, 'Stress Level': data_points})
 
-# # Set a seaborn style (optional)
-# sns.set_style("whitegrid")
-
-# # Create a time series plot
-# plt.figure(figsize=(10, 6))
-# sns.lineplot(data=df, x='Timestamps', y='Stress Level', marker='o', linestyle='-')
-
-# # Add labels and title
-# plt.xlabel('Time')
-# plt.ylabel('Stress Level')
-# plt.title(f'Stress Data Over {len(df)} Hours')
-
-# # Rotate x-axis labels for better readability (optional)
-# plt.xticks(rotation=45)
-
-# # Display the plot using Streamlit
-# st.pyplot(plt)
-
+# Set a seaborn style (optional)
+sns.set_style("whitegrid")
 
 # Create a time series plot
-fig = (plt.figure(figsize=(10, 6)))  # Adjust the figure size as needed
-plt.plot(timestamps, data_points, marker='o', linestyle='-')
+plt.figure(figsize=(10, 6))
+sns.lineplot(data=new_df, x='Timestamps', y='Stress Level', marker='o', linestyle='-')
 
 # Add labels and title
 plt.xlabel('Time')
 plt.ylabel('Stress Level')
-plt.title(f'Stress Data Over {len(df )} Seconds')
+plt.title(f'Stress Data Over {len(new_df)} Hours')
 
 # Rotate x-axis labels for better readability (optional)
 plt.xticks(rotation=45)
 
-# Adjust the x-axis limits to show 10 minutes of data
-# plt.xlim([1, 10])
-
-# Display the plot
-plt.grid(True)  # Optionally add grid lines
-plt.tight_layout()  # Adjust layout to prevent labels from getting cut off
-
-# fig_html = mpld3.fig_to_html(fig)
-# components.html(fig_html, height=600)
+# Display the plot using Streamlit
 st.pyplot(plt)
+
+
+# Create a time series plot
+# fig = (plt.figure(figsize=(10, 6)))  # Adjust the figure size as needed
+# plt.plot(timestamps, data_points, marker='o', linestyle='-')
+
+# # Add labels and title
+# plt.xlabel('Time')
+# plt.ylabel('Stress Level')
+# plt.title(f'Stress Data Over {len(df )} Seconds')
+
+# # Rotate x-axis labels for better readability (optional)
+# plt.xticks(rotation=45)
+
+# # Adjust the x-axis limits to show 10 minutes of data
+# # plt.xlim([1, 10])
+
+# # Display the plot
+# plt.grid(True)  # Optionally add grid lines
+# plt.tight_layout()  # Adjust layout to prevent labels from getting cut off
+
+# # fig_html = mpld3.fig_to_html(fig)
+# # components.html(fig_html, height=600)
+# st.pyplot(plt)
 
 st.write("")
 st.write("")
