@@ -57,7 +57,7 @@ X = np.array(df)
 # timestamps = list(range(30))
 # data_points = [3, 3, 1, 3, 0, 1, 0, 0, 0, 1, 2, 1, 0, 4, 3, 1, 1, 3, 3, 2, 2, 2, 2, 3, 3, 1, 2, 1, 3, 2]
 
-timestamps = len(df)
+timestamps = list(range(len(df)))
 
 data_points = list(svm_clf.predict(X))
 
