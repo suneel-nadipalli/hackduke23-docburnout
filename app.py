@@ -58,6 +58,10 @@ line_chart(
     title="A beautiful simple line chart",
 )
 
+st.write(data)
+
+st.write(type(data))
+
 @st.cache_data(ttl=1)
 def load_data(sheets_url):
     csv_url = sheets_url.replace("/edit#gid=", "/export?format=csv&gid=")
