@@ -8,4 +8,4 @@ with col_0_1:
     st.header("Sleep")
     st.write("Nap 20 minutes to reduce tiredness")
 with col_0_2:
-    Complete1 = st.form_submit_button('Complete')
+    Complete1 = st.button('Complete')
