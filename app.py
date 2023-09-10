@@ -76,7 +76,7 @@ timestamps = list(range(len(df)))
 data_points = list(svm_clf.predict(X))
 
 # Convert timestamps to datetime objects (if they're not already)
-timestamps = pd.to_datetime(timestamps)
+# timestamps = pd.to_datetime(timestamps)
 
 # ========== CREATE PLOT ==========
 
