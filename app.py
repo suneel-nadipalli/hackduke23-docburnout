@@ -1,16 +1,31 @@
 import streamlit as st
 
-# st.set_page_config(
-#     page_title="PatteRN Health"
-#     ,page_icon="🏥"
-#     )
-
 PAGE_CONFIG = {"page_title":"patteRN Health", 
                "page_icon":"🏥", 
                "layout":"centered", 
                "initial_sidebar_state":"collapsed"}
 
 st.set_page_config(**PAGE_CONFIG)
+
+page_name_to_file = {
+    "Home": "app.py",
+    "Daily CheckIn": "pages/daily_checkin.py",
+    "Fatigue Check": "pages/fatigue_check.py",
+    "Suggestions": "pages/suggestions.py"
+}
+
+# Create a sidebar selectbox for page selection
+selected_page = st.sidebar.selectbox("Select Page", list(page_name_to_file.keys()))
+
+# Import and run the selected page
+page_file = page_name_to_file[selected_page]
+
+# Use os.path.join to construct the file path
+page_path = os.path.join("pages", page_file)
+
+# Import and execute the selected page
+page_module = __import__(page_path[:-3])  # Remove ".py" extension
+page_module.run()
 
 with st.sidebar:
     st.title("Home 🏠")
