@@ -60,14 +60,11 @@ data_points = list(svm_clf.predict(X))
 
 # ========== CREATE PLOT ==========
 
-# Create a DataFrame
-new_df = pd.DataFrame({'Time': timestamps, 'Stress Level': data_points})
-
-st.write(new_df)
+plot_df = pd.DataFrame({'Time': timestamps, 'Stress Level': data_points})
 
 stocks = get_stocks_data()
 line_chart(
-    data=new_df,
+    data=plot_df,
     x="Time",
     y="Stress Level"
 )
