@@ -22,10 +22,10 @@ from st_pages import Page, show_pages, add_page_title
 # # and icons should be
 show_pages(
     [
-        Page("app.py", "Home", "🏠"),
-        Page("pages/Daile_Checkin.py", "Daily CheckIn", "📝"),
-        Page("pages/Fatigue_Check.py", "Fatigue Chheck", "😴"),
-        Page ("pages/Suggestions.py", "Suggestions", "💡")
+        Page("app.py", "Home"),
+        Page("pages/Daile_Checkin.py", "Daily CheckIn"),
+        Page("pages/Fatigue_Check.py", "Fatigue Chheck"),
+        Page ("pages/Suggestions.py", "Suggestions")
     ]
 )
 
