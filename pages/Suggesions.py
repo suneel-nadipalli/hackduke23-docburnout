@@ -35,6 +35,9 @@ with col_2_2:
     Complete2 = st.button('Complete  ')
 st.divider()
 
+if Complete0:
+    col_0_1 = st.empty()
+    col_0_2 = st.empty()
 
 st.write("")
 st.write("")
