@@ -86,7 +86,7 @@ if submit_button:
     score = (question_01 + question_02 + question_03 + question_04 + question_05 + 
             question_06 + question_07 + question_08 + question_09 + question_10 + 
             question_11 + question_12 + question_13 + question_14 + question_15)
-    st.header("Your Score: ", str(score))
+    st.header(f"Your Score: {score}")
     if score < 25:
         st.write("Scores of 0-24 indicated very low burnout.")
     elif score < 50:
