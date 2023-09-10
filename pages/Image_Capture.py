@@ -1,5 +1,7 @@
 import streamlit as st
 
+st.title("Test Fatigue")
+
 img_file_buffer = st.camera_input("")
 
 if img_file_buffer is not None:
