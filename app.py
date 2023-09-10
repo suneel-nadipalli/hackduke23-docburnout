@@ -135,11 +135,11 @@ st.write("")
 st.write("")
 st.write("")
 
-col_01, col_02, col_03 = st.columns([2.2, 2, 2])
-with col_02:
-    daily_checking_button = st.button("Daily Checkin", type="primary")
-    if daily_checking_button:
-        switch_page("Daily_Checkin")
+# col_01, col_02, col_03 = st.columns([2.2, 2, 2])
+# with col_02:
+#     daily_checking_button = st.button("Daily Checkin", type="primary")
+#     if daily_checking_button:
+#         switch_page("Daily_Checkin")
 
 
 
