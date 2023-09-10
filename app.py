@@ -95,28 +95,30 @@ st.write("")
 st.write("")
 st.write("")
 
-circ_prog_sl = CircularProgress(
-    label="Current Stress Level",
-    value=5,
-    key="circ_prog_sl")
-
-circ_prog_sl.st_circular_progress()
-
-circ_prog_bl = CircularProgress(
-    label="Current Burnout Level",
-    value=5,
-    key="circ_prog_bl")
-
-circ_prog_bl.st_circular_progress()
 
 dummy1, col1, col2, dummy2 = st.columns([1, 3, 3, 1])
 newsize = (150, 150)
 
 with col1:
-    circ_prog_sl.update_values(progress=75)
+    circ_prog_sl = CircularProgress(
+    label="Current Stress Level",
+    value=5,
+    key="circ_prog_sl")
+
+    circ_prog_sl.st_circular_progress()
+
    
 with col2:
-    circ_prog_sl.update_values(progress=25)
+
+    pred_level = svm_clf.predict(np.array(df.tail(1)))
+    
+    circ_prog_bl = CircularProgress(
+    label="Current Burnout Level",
+    value=(pred_level/5)*100,
+    key="circ_prog_bl")
+
+    circ_prog_bl.st_circular_progress()
+
     # image_3 = Image.open('img/Red Circle.png')
     # # image_3 = Image.open('C:/Users/Jared Bailey/Desktop/Home/Hackathon/Hack for Good/2023/Red Circle.png')
     # image_3 = image_3.resize(newsize)
