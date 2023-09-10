@@ -7,30 +7,6 @@ PAGE_CONFIG = {"page_title":"patteRN Health",
 
 st.set_page_config(**PAGE_CONFIG)
 
-from st_pages import Page, show_pages, add_page_title
-
-show_pages(
-    [
-        Page("app.py", "Home"),
-        Page("pages/Daile_Checkin.py", "Daily CheckIn"),
-        Page("pages/Fatigue_Check.py", "Fatigue Chheck"),
-        Page ("pages/Suggestions.py", "Suggestions")
-    ]
-)
-
-
-# with st.sidebar:
-#     st.title("Home 🏠")
-  
-# with st.sidebar:
-#     st.title("Daily CheckIn 📝")
-
-# with st.sidebar:
-#     st.title("Fatigue Check 😴")
-  
-# with st.sidebar:
-#     st.title("Suggestions 💡")
-
 from streamlit_extras.switch_page_button import switch_page
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -78,7 +54,6 @@ X = np.array(df)
 timestamps = list(range(len(df)))
 
 data_points = list(svm_clf.predict(X))
-
 
 # ========== CREATE PLOT ==========
 
