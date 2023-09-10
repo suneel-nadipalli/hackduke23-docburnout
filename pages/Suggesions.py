@@ -13,7 +13,6 @@ with col_0_2:
     Complete0 = st.button('Complete')
 st.divider()
 
-st.divider()
 col_1_1, col_1_2 = st.columns([4,1])
 
 with col_1_1:
@@ -21,10 +20,9 @@ with col_1_1:
     st.write("Protein bar to consume 300 calories")
 with col_1_2:
     st.write("")
-    Complete1 = st.button('Complete')
+    Complete1 = st.button('Complete ')
 st.divider()
 
-st.divider()
 col_2_1, col_2_2 = st.columns([4,1])
 
 with col_2_1:
@@ -32,5 +30,5 @@ with col_2_1:
     st.write("5 minutes to reduce stress levels")
 with col_2_2:
     st.write("")
-    Complete2 = st.button('Complete')
+    Complete2 = st.button('Complete  ')
 st.divider()
