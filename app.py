@@ -4,10 +4,30 @@ from PIL import Image
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-import mpld3
 import streamlit.components.v1 as components
 from google.oauth2 import service_account
 from gsheetsdb import connect
+
+import joblib
+
+def predict_sl(test_array, model):
+    dataframe = pd.DataFrame([test_array], columns=['resp_rate', 'body_temp', 'body_ox', 'heart_rate'])
+    pred_level = model.predict(dataframe)
+
+    stress_level_labels = {
+    0: "Low/Normal",
+    1: "Medium Low",
+    2: "Medium",
+    3: "Medium High",
+    4: "High"
+    }
+
+    pred_label = stress_level_labels[pred_level[0]]
+
+    return {"stress_level":pred_level[0], 
+            "stress_label": pred_label}
+
+svm_clf = joblib.load('burnout.pkl')
 
 # st.set_page_config(initial_sidebar_state="collapsed")
 
@@ -31,9 +51,15 @@ for row in df.itertuples():
     st.write(f"Resp Rate: {row.resp_rate} | Body Temp: {row.body_temp} | Body Ox: {row.body_ox} | Heart Rate: {row.heart_rate}")
 
 
+X = np.array(df)
+
 # Example time series data (timestamps and data points)
-timestamps = list(range(30))
-data_points = [3, 3, 1, 3, 0, 1, 0, 0, 0, 1, 2, 1, 0, 4, 3, 1, 1, 3, 3, 2, 2, 2, 2, 3, 3, 1, 2, 1, 3, 2]
+# timestamps = list(range(30))
+# data_points = [3, 3, 1, 3, 0, 1, 0, 0, 0, 1, 2, 1, 0, 4, 3, 1, 1, 3, 3, 2, 2, 2, 2, 3, 3, 1, 2, 1, 3, 2]
+
+timestamps = len(df)
+
+data_points = svm_clf.predict(X)
 
 # Convert timestamps to datetime objects (if they're not already)
 timestamps = pd.to_datetime(timestamps)
@@ -45,7 +71,7 @@ plt.plot(timestamps, data_points, marker='o', linestyle='-')
 # Add labels and title
 plt.xlabel('Time')
 plt.ylabel('Stress Level')
-plt.title('Stress Data Over 30 Seconds')
+plt.title(f'Stress Data Over {len(df )} Seconds')
 
 # Rotate x-axis labels for better readability (optional)
 plt.xticks(rotation=45)
